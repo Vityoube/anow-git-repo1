@@ -1,0 +1,93 @@
+{
+  "endpoint": "test_airflow_server_correct",
+  "endpointType": "APACHE_AIRFLOW",
+  "node": "test_airflow_server",
+  "owner": "mrX",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "APACHE_AIRFLOW",
+  "taskType": "APACHE_AIRFLOW_RUN_DAG",
+  "forceCompletedCondition": {
+    "criteria": 
+    [
+      {
+        "fieldName": "id",
+        "operator": "EQ",
+        "value": "2"
+      }
+    ],
+    "operator": "AND"
+  },
+  "forceFailedCondition": {
+    "criteria": 
+    [
+      {
+        "fieldName": "id",
+        "operator": "EQ",
+        "value": "2"
+      }
+    ],
+    "operator": "AND"
+  },
+  "ignoreCondition": {
+    "criteria": 
+    [
+      {
+        "fieldName": "id",
+        "operator": "EQ",
+        "value": "2"
+      }
+    ],
+    "operator": "AND"
+  },
+  "processingCommand": {
+    "configuration": "{\n5:5\n}",
+    "dagId": "long_running_dag"
+  },
+  "actions": 
+  [
+    {
+      "processingActionType": "SET_SEMAPHORE_STATE",
+      "processingEventCategory": "PROCESSING",
+      "processingEventType": "PROCESSING_READY",
+      "processingCommand": {
+        "resource": "new_time_semaphore",
+        "value": "OFF"
+      }
+    }
+  ],
+  "dependencies": 
+  [
+    {
+      "dependencyType": "RESOURCE",
+      "name": "dummy_stock",
+      "processingStatus": "COMPLETED",
+      "processingType": "TASK",
+      "resource": "dummy_stock",
+      "resourcePermits": "1",
+      "resourceType": "STOCK",
+      "serverNodeType": "APACHE_AIRFLOW",
+      "taskType": "APACHE_AIRFLOW_RUN_DAG"
+    }
+  ],
+  "designParameters": 
+  [
+    {
+      "editorType": "TEXT",
+      "name": "3",
+      "title": "3"
+    },
+    {
+      "editorType": "OUTPUT",
+      "name": "1",
+      "outputFormat": "TEXT",
+      "title": "1",
+      "outputDefinition": {
+        "linePattern": "1",
+        "linePatternOperator": "STARTS_WITH",
+        "valueEndOperator": "END_OF_PATTERN",
+        "valueStartOperator": "START_OF_PATTERN"
+      }
+    }
+  ]
+}

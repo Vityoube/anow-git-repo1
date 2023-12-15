@@ -41,7 +41,7 @@
     "operator": "AND"
   },
   "processingCommand": {
-    "configuration": "{\n5:5\n}",
+    "configuration": "{\n5:2\n}",
     "dagId": "long_running_dag"
   },
   "actions": 
